@@ -1,0 +1,72 @@
+Algoritmo algoritmo12
+	Definir op Como Entero
+	Definir option Como Entero
+	Definir contadorEdad Como Entero
+	Definir contadorAlturaHombre Como Entero
+	Definir contadorAlturaMujer Como Entero
+	Definir salir Como Logico
+	Definir sumaAlturaHombre Como Entero
+	Definir sumaAlturaMujer Como Entero
+	Definir sumaEdad Como Entero
+	Dimension edad[1000]
+	Dimension alturaHombre[1000]
+	Dimension alturaMujer[1000]
+	op <- 0
+	option <- 0
+	contadorEdad <- 0
+	contadorAlturaHombre <- 0
+	contadorAlturaMujer <- 0
+	sumaAlturaHombre <- 0
+	sumaAlturaMujer <- 0
+	sumaEdad <- 0
+	salir <- Falso
+	Repetir
+		Escribir 'Ingresa tu sexo'
+		Escribir '1) Hombre'
+		Escribir '2) Mujer'
+		Leer op
+		Segun op  Hacer
+			1:
+				Escribir 'Ingresa tu edad'
+				contadorEdad <- contadorEdad+1
+				Leer edad[contadorEdad]
+				Escribir 'Ingresa tu altura'
+				contadorAlturaHombre <- contadorAlturaHombre+1
+				Leer alturaHombre[contadorAlturaHombre]
+				Si alturaHombre[contadorAlturaHombre]==0 Entonces
+					salir <- Verdadero
+				SiNo
+					salir <- Falso
+				FinSi
+			2:
+				Escribir 'Ingresa tu edad'
+				contadorEdad <- contadorEdad+1
+				Leer edad[contadorEdad]
+				Escribir 'Ingresa tu altura'
+				contadorAlturaMujer <- contadorAlturaMujer+1
+				Leer alturaMujer[contadorAlturaMujer]
+				Si alturaMujer[contadorAlturaMujer]==0 Entonces
+					salir <- Verdadero
+				SiNo
+					salir <- Falso
+				FinSi
+			De Otro Modo:
+				Escribir 'Ingresa un opcion valida'
+		FinSegun
+	Hasta Que salir==Verdadero
+	Para i<-1 Hasta contadorAlturaHombre Hacer
+		sumaAlturaHombre <- sumaAlturaHombre+alturaHombre[i]
+	FinPara
+	Para i<-1 Hasta contadorAlturaMujer Hacer
+		sumaAlturaMujer <- sumaAlturaMujer+alturaMujer[i]
+	FinPara
+	Para i<-1 Hasta contadorEdad Hacer
+		sumaEdad <- sumaEdad+edad[i]
+	FinPara
+	promedioAlturaHombre <- sumaAlturaHombre/contadorAlturaHombre
+	promedioAlturaMujer <- sumaAlturaMujer/contadorAlturaMujer
+	promedioEdad <- sumaEdad/contadorEdad
+	Escribir 'El promedio de Edad es de: ',promedioEdad
+	Escribir 'El promedio de altura para los hombres es de: ',promedioAlturaHombre
+	Escribir 'El promedio de altura para las mujeres es de: ',promedioAlturaMujer
+FinAlgoritmo
